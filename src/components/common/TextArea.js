@@ -22,15 +22,17 @@ const TextArea = ({ id, label, placeholder, rows, maxLength }) => {
           {label}
         </label>
       )}
-      <span className={styles.input} char-count={`${count} / ${maxLength}`}>
-        <textarea
-          id={id}
-          placeholder={placeholder}
-          rows={rows}
-          maxLength={maxLength}
-          onChange={countCharacters}
-        />
-      </span>
+      {maxLength && (
+        <span className={styles.input} char-count={`${count} / ${maxLength}`}>
+          <textarea
+            id={id}
+            placeholder={placeholder}
+            rows={rows}
+            maxLength={maxLength}
+            onChange={countCharacters}
+          />
+        </span>
+      )}
     </div>
   );
 };
