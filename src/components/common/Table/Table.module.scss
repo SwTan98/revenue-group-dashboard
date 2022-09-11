@@ -1,0 +1,66 @@
+@import "styles/globals";
+
+.tableWrapper {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar-track-piece {
+    background: $concrete;
+  }
+  &::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px !important;
+    background-color: $gray !important;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  font-weight: 500;
+}
+
+.head {
+  position: sticky;
+  inset-block-start: 0;
+  background-color: $white;
+  border-bottom: 1px solid $silver;
+  border-collapse: separate;
+}
+
+.row {
+  border-bottom: 1px solid $silver;
+}
+
+.body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar-track-piece {
+    background: $concrete;
+  }
+  &::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px !important;
+    background-color: $gray !important;
+  }
+
+  .row:nth-child(odd) {
+    background-color: $aliceblue;
+  }
+}
+
+.cell {
+  padding: 8px 16px;
+}
+
+.titleWrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  cursor: pointer;
+  color: $matterhorn;
+}

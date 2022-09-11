@@ -1,0 +1,10 @@
+@import "styles/globals";
+
+.label {
+  background-color: $primary;
+  color: $white;
+  padding: 5px 10px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+}

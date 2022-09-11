@@ -1,0 +1,12 @@
+@import "styles/globals";
+
+.checkbox {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+}

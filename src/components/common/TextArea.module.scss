@@ -1,0 +1,41 @@
+@import "styles/globals";
+
+.textArea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input {
+  border: 1px solid $gray;
+  border-radius: $radius-narrow;
+  position: relative;
+  overflow: hidden;
+
+  textarea {
+    padding: 6px;
+    resize: none;
+    border: none;
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    outline: none;
+    margin-bottom: 16px;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: attr(char-count);
+    color: $charcoal;
+    font-size: 12px;
+    padding: 6px;
+  }
+}
