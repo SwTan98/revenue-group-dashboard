@@ -1,0 +1,60 @@
+@import "styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.justifyBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rules {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: $radius-primary;
+  background-color: $concrete;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.parameters {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.revenue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}

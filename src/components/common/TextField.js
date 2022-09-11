@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
+import cx from "classnames";
 import PropTypes from "prop-types";
 
 import styles from "./TextField.module.scss";
 
-const TextField = ({ id, label, placeholder, type, prepend, append }) => {
+const TextField = ({
+  id,
+  label,
+  placeholder,
+  type,
+  prepend,
+  append,
+  onChange,
+  value,
+  className,
+}) => {
   return (
-    <div className={styles.textField}>
+    <div className={cx(styles.textField, className)}>
       {label && (
-        <label className={styles.label} for={id}>
+        <label className={styles.label} htmlFor={id}>
           {label}
         </label>
       )}
@@ -18,6 +29,8 @@ const TextField = ({ id, label, placeholder, type, prepend, append }) => {
           type={type}
           id={id}
           placeholder={placeholder}
+          onChange={onChange}
+          value={value}
         />
         {append && <span className={styles.node}>{append}</span>}
       </div>
@@ -32,6 +45,9 @@ TextField.propTypes = {
   type: PropTypes.string,
   prepend: PropTypes.node,
   append: PropTypes.node,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+  className: PropTypes.string,
 };
 
 TextField.defaultProps = {
@@ -40,6 +56,9 @@ TextField.defaultProps = {
   type: "text",
   prepend: null,
   append: null,
+  onChange: () => {},
+  value: undefined,
+  className: undefined,
 };
 
 export default TextField;

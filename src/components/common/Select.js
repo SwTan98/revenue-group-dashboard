@@ -1,18 +1,24 @@
 import React from "react";
 import Image from "next/image";
+import cx from "classnames";
 import PropTypes from "prop-types";
 
 import styles from "./Select.module.scss";
 
-const Select = ({ id, options }) => {
+const Select = ({ id, options, className, onChange, value }) => {
   return (
-    <div className={styles.wrapper}>
-      <select id={id} className={styles.select}>
-        {options.map(({ value, label }, index) => (
+    <div className={cx(styles.wrapper, className)}>
+      <select
+        id={id}
+        className={styles.select}
+        defaultValue=""
+        value={value}
+        onChange={onChange}
+      >
+        {options.map(({ value: optionValue, label }, index) => (
           <option
             disabled={index === 0}
-            selected={index === 0}
-            value={value}
+            value={optionValue}
             key={`select-${id}-option-${index}`}
           >
             {label}
@@ -34,8 +40,15 @@ Select.propTypes = {
       label: PropTypes.string,
     })
   ).isRequired,
+  className: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 };
 
-Select.defaultProps = {};
+Select.defaultProps = {
+  className: undefined,
+  onChange: () => {},
+  value: undefined,
+};
 
 export default Select;
