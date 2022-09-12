@@ -89,6 +89,14 @@ const Form = ({ onSubmit }) => {
       label: "aff_sub_2",
       value: "aff_sub_2",
     },
+    {
+      label: "aff_sub_3",
+      value: "aff_sub_3",
+    },
+    {
+      label: "aff_sub_4",
+      value: "aff_sub_4",
+    },
   ];
 
   const operatorOptions = [
@@ -103,6 +111,22 @@ const Form = ({ onSubmit }) => {
     {
       label: "is not",
       value: "is not",
+    },
+    {
+      label: "starts with",
+      value: "starts with",
+    },
+    {
+      label: "ends with",
+      value: "ends with",
+    },
+    {
+      label: "contains",
+      value: "contains",
+    },
+    {
+      label: "doesn't contain",
+      value: "doesn't contain",
     },
   ];
 
