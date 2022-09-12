@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 
 import styles from "./IconButton.module.scss";
 
-const Button = ({ variant, icon, onClick, type }) => {
+const Button = ({ variant, icon, onClick, type, className }) => {
   return (
     <button
-      className={cx(styles.iconButton, styles[variant])}
+      className={cx(styles.iconButton, styles[variant], className)}
       type={type}
       onClick={onClick}
     >
@@ -22,6 +22,7 @@ Button.propTypes = {
   icon: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -29,6 +30,7 @@ Button.defaultProps = {
   icon: "",
   onClick: () => {},
   type: "button",
+  className: undefined,
 };
 
 export default Button;

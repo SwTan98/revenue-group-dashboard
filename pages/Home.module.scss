@@ -1,14 +1,56 @@
+@import "styles/variables";
+
 .container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 48px;
-  margin: 48px 96px;
+  gap: 32px;
+  padding: 0 96px;
+  min-width: 1000px;
+  height: 100vh;
+
+  > * {
+    max-height: 90%;
+    overflow-y: auto;
+    flex-grow: 1;
+    &::-webkit-scrollbar-track-piece {
+      background: $concrete;
+    }
+    &::-webkit-scrollbar {
+      width: 8px !important;
+      height: 8px !important;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px !important;
+      background-color: $gray !important;
+    }
+    > * {
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
 }
 
 .left {
-  flex-grow: 1;
+  width: 33%;
 }
 
 .right {
-  flex-grow: 2;
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.empty {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

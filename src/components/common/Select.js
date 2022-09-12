@@ -5,15 +5,15 @@ import PropTypes from "prop-types";
 
 import styles from "./Select.module.scss";
 
-const Select = ({ id, options, className, onChange, value }) => {
+const Select = ({ id, options, className, onChange, value, ...props }) => {
   return (
     <div className={cx(styles.wrapper, className)}>
       <select
         id={id}
         className={styles.select}
-        defaultValue=""
         value={value}
         onChange={onChange}
+        {...props}
       >
         {options.map(({ value: optionValue, label }, index) => (
           <option

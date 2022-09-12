@@ -14,6 +14,7 @@ const TextField = ({
   onChange,
   value,
   className,
+  ...props
 }) => {
   return (
     <div className={cx(styles.textField, className)}>
@@ -31,6 +32,7 @@ const TextField = ({
           placeholder={placeholder}
           onChange={onChange}
           value={value}
+          {...props}
         />
         {append && <span className={styles.node}>{append}</span>}
       </div>

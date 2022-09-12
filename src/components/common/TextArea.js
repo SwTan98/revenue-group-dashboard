@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./TextArea.module.scss";
@@ -14,8 +14,7 @@ const TextArea = ({
 }) => {
   const [count, setCount] = useState(0);
 
-  const countCharacters = (e) => {
-    const currentCount = e.target.value.length;
+  const countCharacters = (currentCount) => {
     if (!currentCount) {
       setCount(0);
       return;
@@ -25,8 +24,12 @@ const TextArea = ({
 
   const handleChange = (e) => {
     onChange(e);
-    countCharacters(e);
+    countCharacters(e.target.value.length);
   };
+
+  useEffect(() => {
+    countCharacters(value?.length);
+  }, [value]);
 
   return (
     <div className={styles.textArea}>
