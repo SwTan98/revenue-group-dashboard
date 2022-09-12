@@ -71,7 +71,6 @@ const Form = ({ onSubmit }) => {
   const updateRule = (ruleIndex, key, value) => {
     setRules((current) => {
       current[ruleIndex][key] = value;
-      console.log(current);
       return [...current];
     });
   };
